@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.scss";
 
 type Props = {
 	question: string;
@@ -18,7 +19,7 @@ const QuestionCard: React.FC<Props> = ({
 	totalQuestions,
 }) => {
 	return (
-		<div>
+		<div className='container'>
 			<p className='number'>
 				Question: {questionNr} / {totalQuestions}
 			</p>
@@ -27,11 +28,13 @@ const QuestionCard: React.FC<Props> = ({
 				{answers.map((answer) => (
 					<div key={answer}>
 						<button
+							className='multiple'
 							disabled={!!userAnswer}
 							value={answer}
 							onClick={callback}
-						></button>
-						<span dangerouslySetInnerHTML={{ __html: answer }} />
+						>
+							<span dangerouslySetInnerHTML={{ __html: answer }} />
+						</button>
 					</div>
 				))}
 			</div>
