@@ -7,6 +7,7 @@ import QuestionCard from "./components/QuestionCard";
 
 //types
 import { Difficulty } from "./API";
+
 const TOTALQ = 10;
 
 const App = () => {
